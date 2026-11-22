@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,follow">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="Prepare cópias locais dos jogos e do bolão salvos no antigo Mega-Sena Radar.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Recuperar jogos do endereço antigo | Radar Loterias</title>
+  <style>
+    :root{color-scheme:light;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#17352e;background:#f4f7f5}*{box-sizing:border-box}body{margin:0}main{max-width:780px;margin:auto;padding:36px 20px 64px}.brand{font-weight:800;text-decoration:none}h1{font-size:clamp(2rem,6vw,2.8rem);line-height:1.13;letter-spacing:-.04em;margin:28px 0 15px}h2{font-size:1.35rem;margin:0 0 12px}h3{font-size:1.1rem;margin:0 0 8px}p,li{line-height:1.65}p{margin:0 0 14px}li+li{margin-top:8px}ol{padding-left:23px}.intro{font-size:1.08rem;color:#4b6059}.card{background:#fff;border:1px solid #dce6df;border-radius:18px;padding:24px;margin-top:20px}.notice{background:#e9f2ed;border-left:4px solid #006b50;padding:16px;border-radius:6px;line-height:1.6;margin:20px 0}.button,button{display:inline-block;font:inherit;font-weight:700;border:0;background:#006b50;color:white;text-decoration:none;border-radius:10px;padding:13px 18px;min-height:48px;cursor:pointer}.secondary{background:#eaf3ed;color:#15573e}button:disabled{background:#e5e9e6;color:#66736b;cursor:not-allowed}.buttons{display:flex;gap:12px;flex-wrap:wrap}.result{border-top:1px solid #e0e8e2;padding-top:19px;margin-top:22px}.result p{color:#4b6059}.status{line-height:1.6;margin-top:16px}.muted,small{color:#596d64}.small{font-size:.92rem}small{display:block;margin-top:28px;line-height:1.6}a{color:#006b50;text-underline-offset:3px}:focus-visible{outline:3px solid #947023;outline-offset:4px}[hidden]{display:none!important}code{overflow-wrap:anywhere}noscript p{padding:18px;background:#fff1dc;border-radius:10px}
+  </style>
+</head>
+<body>
+<main>
+  <a class="brand" href="https://radarloterias.com.br/">Radar Loterias</a>
+  <h1>Leve seus jogos<br>para o novo endereço.</h1>
+  <p class="intro">Esta página procura os dados que o antigo Mega-Sena Radar guardou neste navegador e prepara arquivos para você importar no aplicativo atual.</p>
+  <div class="notice"><strong>Use o mesmo aparelho, navegador e perfil do aplicativo antigo.</strong> Não limpe os dados nem desinstale a versão antiga antes de guardar suas cópias. Dados já apagados não podem ser recuperados por esta página.</div>
+  <section class="card" aria-labelledby="search-title">
+    <h2 id="search-title">1. Procurar neste navegador</h2>
+    <p>A consulta só começa quando você tocar no botão. Seus jogos não são enviados para um servidor, alterados ou apagados.</p>
+    <button id="inspect" type="button">Procurar meus dados neste navegador</button>
+    <p id="status" class="status" role="status" aria-live="polite">Nenhum dado foi consultado.</p>
+    <div id="results" hidden>
+      <div class="result">
+        <h3>Jogos e preferências</h3>
+        <p id="tickets-status"></p>
+        <button id="download-tickets" type="button" disabled>Baixar cópia dos jogos</button>
+      </div>
+      <div class="result">
+        <h3>Plano de bolão</h3>
+        <p id="pool-status"></p>
+        <button id="download-pool" type="button" disabled>Baixar cópia do bolão</button>
+      </div>
+    </div>
+    <p class="small muted" style="margin-top:18px">Os arquivos são separados. A cópia dos jogos inclui o preço e as preferências de filtros salvas; o histórico local de resultados não faz parte dela. O aplicativo valida cada arquivo ao importar.</p>
+    <noscript><p>Ative o JavaScript para procurar dados neste navegador. Se a versão antiga do aplicativo ainda abrir, você também pode usar os botões de exportação dela.</p></noscript>
+  </section>
+  <section class="card" aria-labelledby="import-title">
+    <h2 id="import-title">2. Importar no aplicativo atual</h2>
+    <ol>
+      <li>Guarde os arquivos JSON baixados. No iPhone, se aparecer uma prévia, use o compartilhamento para salvar o arquivo em Arquivos.</li>
+      <li>Abra o <a href="https://radarloterias.com.br/mega-sena-completo/">Mega-Sena completo</a>. Em <strong>Meus jogos</strong>, toque em <strong>Importar jogos do arquivo</strong> e escolha a cópia dos jogos.</li>
+      <li>Para o segundo arquivo, abra <strong>Bolão</strong> e toque em <strong>Importar bolão do arquivo</strong>. Essa ação substitui o plano de bolão que estiver no aplicativo atual; guarde uma cópia dele antes, se precisar.</li>
+    </ol>
+    <div class="buttons"><a class="button" href="https://radarloterias.com.br/mega-sena-completo/">Abrir Mega-Sena completo</a><a class="button secondary" href="https://radarloterias.com.br/ajuda/">Ver ajuda</a></div>
+  </section>
+  <section class="card">
+    <h2>Não encontrou os dados?</h2>
+    <p>Confira se está no navegador e no perfil usados anteriormente. Navegação privada, dados removidos e armazenamento separado de um aplicativo instalado podem impedir a recuperação por esta página.</p>
+    <p>Se o aplicativo antigo ainda abrir, use <strong>Meus jogos → Baixar cópia dos jogos</strong> e <strong>Bolão → Baixar cópia do bolão</strong> nele. A versão instalada e o navegador podem ter dados diferentes.</p>
+    <p><a href="https://github.com/AiltonSantanaReis/radar-loterias-suporte/issues/new/choose">Relatar um problema técnico</a>. O relato é público: não anexe backups, senhas, documentos ou comprovantes.</p>
+  </section>
+  <small>Esta recuperação funciona apenas para dados do Mega-Sena Radar guardados no endereço <code>ailtonsantanareis.github.io</code>. Ela não consulta dados de outros projetos, não registra service worker e não faz transferência automática entre domínios.</small>
+</main>
+<script id="recovery-data">
+'use strict';
+const RecoveryData = (() => {
+  const KEYS = Object.freeze({tickets:'megasena_radar_tickets_v2',settings:'megasena_radar_settings_v2',pool:'megasena_radar_pool_v1'});
+  const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);
+  const bytes = text => new TextEncoder().encode(text).length;
+  function record(raw, label) {
+    if (raw === null || raw === undefined) return null;
+    if (typeof raw !== 'string' || raw.length > 2 * 1024 * 1024) throw new Error(label + ': os dados são grandes demais para este formato de cópia.');
+    try { const value=JSON.parse(raw); if (!object(value)) throw new Error(); return value; }
+    catch (_) { throw new Error(label + ': os dados encontrados não têm um formato reconhecido. Eles não foram alterados.'); }
+  }
+  function tickets(rawTickets, rawSettings, exportedAt) {
+    const ticketRecord=record(rawTickets,'Jogos');
+    const settingsRecord=record(rawSettings,'Preferências');
+    if (!ticketRecord && !settingsRecord) return null;
+    if (ticketRecord && (ticketRecord.schemaVersion !== 2 || !Array.isArray(ticketRecord.tickets))) throw new Error('O formato dos jogos encontrados não é compatível com esta recuperação. Os dados foram preservados.');
+    if (settingsRecord && (settingsRecord.schemaVersion !== 2 || !object(settingsRecord.settings))) throw new Error('O formato das preferências encontradas não é compatível com esta recuperação. Os dados foram preservados.');
+    const savedSettings=settingsRecord ? settingsRecord.settings : {basePrice:6};
+    if (typeof savedSettings.basePrice !== 'number' || !Number.isFinite(savedSettings.basePrice) || savedSettings.basePrice <= 0) throw new Error('As preferências encontradas contêm um preço inválido. Os dados foram preservados.');
+    const settings={basePrice:savedSettings.basePrice};
+    if (Object.hasOwn(savedSettings,'generationPreferences')) settings.generationPreferences=savedSettings.generationPreferences;
+    const savedTickets=ticketRecord ? ticketRecord.tickets : [];
+    const copiedTickets=savedTickets.map(ticket => {
+      if (!object(ticket) || !Array.isArray(ticket.nums) || typeof ticket.id !== 'string' || typeof ticket.createdAt !== 'string' || !(ticket.targetContest === null || Number.isSafeInteger(ticket.targetContest))) throw new Error('Há um registro de jogo em formato não reconhecido. Os dados foram preservados.');
+      return {id:ticket.id,nums:ticket.nums,createdAt:ticket.createdAt,targetContest:ticket.targetContest};
+    });
+    const content=JSON.stringify({kind:'MegaSenaRadarBackup',schemaVersion:2,exportedAt,tickets:copiedTickets,settings},null,2);
+    if (bytes(content) > 2 * 1024 * 1024) throw new Error('A cópia dos jogos excede o limite de 2 MB aceito pelo aplicativo. Preserve estes dados e consulte o suporte sem enviar seu backup.');
+    return {content,count:copiedTickets.length};
+  }
+  function pool(rawPool) {
+    const value=record(rawPool,'Bolão');
+    if (!value) return null;
+    if (value.kind !== 'MegaSenaRadarPool' || value.version !== 1 || !object(value.plan) || !Array.isArray(value.plan.games)) throw new Error('O formato do bolão encontrado não é compatível com esta recuperação. Os dados foram preservados.');
+    const content=JSON.stringify(value,null,2);
+    if (bytes(content) > 150000) throw new Error('A cópia do bolão excede o limite de 150 KB aceito pelo aplicativo. Os dados foram preservados.');
+    return {content,count:value.plan.games.length};
+  }
+  function inspect(read, exportedAt) {
+    const values={},errors={};
+    for (const [name,key] of Object.entries(KEYS)) {
+      try { values[name]=read(key); }
+      catch (_) { errors[name]='O navegador não permitiu consultar estes dados. Nenhum dado foi alterado.'; }
+    }
+    const result={tickets:null,pool:null,ticketsError:null,poolError:null};
+    try { if(errors.tickets || errors.settings) throw new Error(errors.tickets || errors.settings); result.tickets=tickets(values.tickets,values.settings,exportedAt); }
+    catch (error) { result.ticketsError=error.message; }
+    try { if(errors.pool) throw new Error(errors.pool); result.pool=pool(values.pool); }
+    catch (error) { result.poolError=error.message; }
+    return result;
+  }
+  return Object.freeze({KEYS,inspect});
+})();
+</script>
+<script>
+'use strict';
+(() => {
+  const allowedOrigin='https://ailtonsantanareis.github.io';
+  const inspectButton=document.getElementById('inspect');
+  const status=document.getElementById('status');
+  const ticketsButton=document.getElementById('download-tickets');
+  const poolButton=document.getElementById('download-pool');
+  let copies=null;
+  inspectButton.addEventListener('click',() => {
+    if (location.origin !== allowedOrigin) {
+      status.textContent='Para acessar os dados do endereço antigo, abra esta página em https://ailtonsantanareis.github.io/radar-loterias-suporte/recuperar/ no mesmo navegador e perfil.';
+      return;
+    }
+    copies=RecoveryData.inspect(key => window.localStorage.getItem(key),new Date().toISOString());
+    document.getElementById('results').hidden=false;
+    document.getElementById('tickets-status').textContent=copies.ticketsError || (copies.tickets ? `${copies.tickets.count} jogo(s) encontrado(s). A cópia também guarda as preferências disponíveis.` : 'Nenhuma cópia de jogos ou preferências foi encontrada neste navegador.');
+    document.getElementById('pool-status').textContent=copies.poolError || (copies.pool ? `Plano encontrado com ${copies.pool.count} jogo(s). Baixe este arquivo separado da cópia dos jogos individuais.` : 'Nenhum plano de bolão foi encontrado neste navegador.');
+    ticketsButton.disabled=!copies.tickets;
+    poolButton.disabled=!copies.pool;
+    status.textContent=copies.tickets || copies.pool ? 'Consulta concluída. Baixe as cópias disponíveis abaixo; os dados originais continuam preservados.' : 'Consulta concluída. Veja os detalhes abaixo e as orientações ao final da página.';
+  });
+  function download(kind) {
+    const copy=copies && copies[kind];
+    if (!copy) return;
+    const date=new Date().toISOString().slice(0,10);
+    const filename=kind==='tickets' ? `mega-sena-radar-backup-${date}.json` : `mega-sena-radar-bolao-${date}.json`;
+    const url=URL.createObjectURL(new Blob([copy.content],{type:'application/json;charset=utf-8'}));
+    const link=document.createElement('a');
+    link.href=url;link.download=filename;document.body.append(link);link.click();link.remove();
+    setTimeout(() => URL.revokeObjectURL(url),30000);
+    status.textContent='Arquivo preparado. Confira se ele foi salvo antes de seguir para o novo aplicativo.';
+  }
+  ticketsButton.addEventListener('click',() => download('tickets'));
+  poolButton.addEventListener('click',() => download('pool'));
+})();
+</script>
+</body>
+</html>

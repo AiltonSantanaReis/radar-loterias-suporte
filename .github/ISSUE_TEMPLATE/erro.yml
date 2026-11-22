@@ -1,0 +1,31 @@
+name: Problema técnico
+description: Relatar uma falha no Radar Loterias ou na recuperação de jogos.
+title: "[Problema] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Este relato é público. Descreva o problema com exemplos fictícios e não envie senhas, documentos, comprovantes ou arquivos de backup. Para instruções de uso, consulte https://radarloterias.com.br/ajuda/.
+  - type: textarea
+    id: problema
+    attributes:
+      label: O que aconteceu?
+      description: Diga o que esperava e o que apareceu na tela.
+    validations:
+      required: true
+  - type: textarea
+    id: passos
+    attributes:
+      label: Como reproduzir
+      description: Liste a página, os botões utilizados e os passos necessários, sem dados pessoais.
+    validations:
+      required: true
+  - type: input
+    id: ambiente
+    attributes:
+      label: Aparelho e navegador
+      placeholder: "Exemplo: iPhone, Safari; Android, Chrome; computador, Firefox."
+  - type: input
+    id: versao
+    attributes:
+      label: Versão do aplicativo, se souber
